@@ -6,7 +6,7 @@ public class LinkedList {
     private Node lastNode = null;
     private int totalOfElements = 0;
 
-    public void addAtBeginning(Object element) {
+    public void addAtTheBeginning(Object element) {
 
 
         final Node node = new Node(element, this.node);
@@ -29,7 +29,7 @@ public class LinkedList {
         Node node = this.node;
 
         if (node == null) {
-            addAtBeginning(element);
+            addAtTheBeginning(element);
         } else {
             for (int i = 0; i < totalOfElements; i++) {
                 if (node.getNext() == null) {
@@ -57,16 +57,30 @@ public class LinkedList {
 
     }
 
-    public Object get(int position) {
-        return null;
+    public Node get(int position) {
+
+        if (!isValidPosition(position)) {
+            throw new IllegalArgumentException("Invalid position!!");
+        }
+
+        Node node = this.node;
+        for (int i = 0; i < position; i++) {
+            node = node.getNext();
+        }
+
+        return node;
+    }
+
+    private boolean isValidPosition(int position) {
+        return position >= 0 && position < totalOfElements;
     }
 
     public void remove() {
 
     }
 
-    public int tamanho() {
-        return 0;
+    public int size() {
+        return totalOfElements;
     }
 
     public boolean exists(Object element) {

@@ -33,11 +33,16 @@ public class Node {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Node node = (Node) o;
-        return Objects.equals(element, node.element) && Objects.equals(next, node.next);
+        return element.equals(node.element);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(element, next);
+        return Objects.hash(element);
+    }
+
+    @Override
+    public String toString() {
+        return this.element.toString();
     }
 }

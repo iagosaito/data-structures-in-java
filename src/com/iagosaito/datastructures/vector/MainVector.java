@@ -16,7 +16,7 @@ public class MainVector {
 
         System.out.println(vector.exists(p3));
         System.out.println(vector.toString());
-        System.out.println(vector.totalOfElements());
+        System.out.println(vector.size());
         System.out.println(vector.get(2));
 
         System.out.println("\nRemove element!!");

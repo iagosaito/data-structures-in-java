@@ -6,16 +6,21 @@ public class MainLinkedList {
 
         LinkedList linkedList = new LinkedList();
 
-        linkedList.addAtBeginning("Iago");
+        linkedList.addAtTheBeginning("Iago");
         System.out.println(linkedList.toString());
-        linkedList.addAtBeginning("Felipe");
+        linkedList.addAtTheBeginning("Felipe");
         System.out.println(linkedList.toString());
-        linkedList.addAtBeginning("Giovani");
+        linkedList.addAtTheBeginning("Giovani");
         System.out.println(linkedList.toString());
 
-        linkedList.addInTheEnd("Último");
+        linkedList.addInTheEnd("Matias");
         System.out.println(linkedList.toString());
-        linkedList.addInTheEnd("Depois do último");
+        linkedList.addInTheEnd("Ítalo");
         System.out.println(linkedList.toString());
+
+        System.out.println(linkedList.get(0));
+        linkedList.addAtTheBeginning("Lautaro");
+        System.out.println(linkedList.toString());
+        System.out.println(linkedList.get(5));
     }
 }
