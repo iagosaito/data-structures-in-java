@@ -22,5 +22,12 @@ public class MainLinkedList {
         linkedList.addAtTheBeginning("Lautaro");
         System.out.println(linkedList.toString());
         System.out.println(linkedList.get(5));
+
+        linkedList.removeAtTheBeginning();
+        System.out.println(linkedList.toString());
+        linkedList.removeAtTheBeginning();
+        System.out.println(linkedList.toString());
+        linkedList.removeAtTheBeginning();
+        System.out.println(linkedList.toString());
     }
 }

@@ -75,8 +75,18 @@ public class LinkedList {
         return position >= 0 && position < totalOfElements;
     }
 
-    public void remove() {
+    public void removeAtTheBeginning() {
+        if (totalOfElements == 0) {
+            throw new IllegalArgumentException("you cannot remove an element in an empty list");
+        }
 
+        this.node = this.node.getNext();
+
+        totalOfElements--;
+
+        if (totalOfElements == 0) {
+            this.lastNode = null;
+        }
     }
 
     public int size() {
