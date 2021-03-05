@@ -2,20 +2,20 @@ package com.iagosaito.datastructures.linkedlist;
 
 public class LinkedList {
 
-    private Node node = null;
+    private Node firstNode = null;
     private Node lastNode = null;
     private int totalOfElements = 0;
 
     public void addAtTheBeginning(Object element) {
 
 
-        final Node node = new Node(element, this.node);
+        final Node node = new Node(element, this.firstNode);
 
         if (totalOfElements == 0) {
             this.lastNode = node;
         }
 
-        this.node = node;
+        this.firstNode = node;
         totalOfElements++;
     }
 
@@ -26,7 +26,7 @@ public class LinkedList {
     @Deprecated
     public void addInTheEndDeprecated(Object element) {
 
-        Node node = this.node;
+        Node node = this.firstNode;
 
         if (node == null) {
             addAtTheBeginning(element);
@@ -75,7 +75,7 @@ public class LinkedList {
             throw new IllegalArgumentException("Invalid position!!");
         }
 
-        Node node = this.node;
+        Node node = this.firstNode;
         for (int i = 0; i < position; i++) {
             node = node.getNext();
         }
@@ -92,7 +92,7 @@ public class LinkedList {
             throw new IllegalArgumentException("you cannot remove an element in an empty list");
         }
 
-        this.node = this.node.getNext();
+        this.firstNode = this.firstNode.getNext();
 
         totalOfElements--;
 
@@ -103,6 +103,29 @@ public class LinkedList {
 
     public void remove(int position) {
 
+        if (totalOfElements == 0) {
+            throw new IllegalArgumentException("you cannot remove an element in an empty list");
+        }
+
+        if (position < 0 || position >= totalOfElements) {
+            throw new IllegalArgumentException("invalid position!");
+        }
+
+        if (position == 0) {
+            removeAtTheBeginning();
+        } else {
+            Node previousNode = get(position - 1);
+            Node nodeToBeDeleted = previousNode.getNext();
+
+            previousNode.setNext(nodeToBeDeleted.getNext());
+
+            if (nodeToBeDeleted.getNext() == null) {
+                this.lastNode = previousNode;
+            }
+
+            totalOfElements--;
+        }
+
     }
 
     public int size() {
@@ -111,7 +134,7 @@ public class LinkedList {
 
     public boolean exists(Object element) {
 
-        Node node = this.node;
+        Node node = this.firstNode;
 
         while (node != null) {
             if (node.getElement().equals(element)) {
@@ -129,7 +152,7 @@ public class LinkedList {
 
         StringBuilder stringBuilder = new StringBuilder();
         stringBuilder.append("{");
-        Node node = this.node;
+        Node node = this.firstNode;
         for (int i = 0; i < totalOfElements; i++) {
             stringBuilder.append(node.getElement()).append(", ");
             node = node.getNext();

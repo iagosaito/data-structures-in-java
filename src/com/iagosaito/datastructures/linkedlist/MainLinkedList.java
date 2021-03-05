@@ -33,8 +33,8 @@ public class MainLinkedList {
         linkedList.add(0, "Francisco");
         System.out.println(linkedList.toString());
 
-        System.out.println(linkedList.exists("Francisco"));
-        System.out.println(linkedList.exists("Ítalo"));
-        System.out.println(linkedList.exists("Ferdinando"));
+        System.out.println("=== Remove element in any position ===");
+        linkedList.remove(3);
+        System.out.println(linkedList.toString());
     }
 }
