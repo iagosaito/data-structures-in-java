@@ -67,7 +67,7 @@ public class Vector {
         return false;
     }
 
-    public int totalOfElements() {
+    public int size() {
         return totalOfElements;
     }
 
