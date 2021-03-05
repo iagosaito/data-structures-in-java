@@ -29,5 +29,8 @@ public class MainLinkedList {
         System.out.println(linkedList.toString());
         linkedList.removeAtTheBeginning();
         System.out.println(linkedList.toString());
+
+        linkedList.add(0, "Francisco");
+        System.out.println(linkedList.toString());
     }
 }

@@ -55,6 +55,18 @@ public class LinkedList {
 
     public void add(int position, Object element) {
 
+        if (position == 0) {
+            addAtTheBeginning(element);
+        } else if (position == totalOfElements){
+            addInTheEnd(element);
+        } else {
+            Node node = get(position - 1);
+
+            Node newNode = new Node(element, node.getNext());
+            node.setNext(newNode);
+
+            totalOfElements++;
+        }
     }
 
     public Node get(int position) {
