@@ -13,11 +13,9 @@ public class MainLinkedList {
         linkedList.addAtBeginning("Giovani");
         System.out.println(linkedList.toString());
 
-        linkedList.addInTheEnd("Final");
-        linkedList.addInTheEnd("Depois do Final");
+        linkedList.addInTheEnd("Último");
         System.out.println(linkedList.toString());
-
-        linkedList.addAtBeginning("Começo");
+        linkedList.addInTheEnd("Depois do último");
         System.out.println(linkedList.toString());
     }
 }

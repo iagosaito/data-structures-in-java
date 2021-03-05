@@ -3,11 +3,19 @@ package com.iagosaito.datastructures.linkedlist;
 public class LinkedList {
 
     private Node node = null;
+    private Node lastNode = null;
     private int totalOfElements = 0;
 
     public void addAtBeginning(Object element) {
 
-        this.node = new Node(element, node);
+
+        final Node node = new Node(element, this.node);
+
+        if (totalOfElements == 0) {
+            this.lastNode = node;
+        }
+
+        this.node = node;
         totalOfElements++;
     }
 
@@ -15,7 +23,8 @@ public class LinkedList {
      * Algoritmo com complexidade O(n), visto que para adicionar um elemento no final,
      * teríamos que percorrer todos os nós até encontrar o último
      */
-    public void addInTheEnd(Object element) {
+    @Deprecated
+    public void addInTheEndDeprecated(Object element) {
 
         Node node = this.node;
 
@@ -31,6 +40,15 @@ public class LinkedList {
                 }
             }
         }
+
+        totalOfElements++;
+    }
+
+    public void addInTheEnd(Object element) {
+        final Node node = new Node(element, null);
+
+        this.lastNode.setNext(node);
+        this.lastNode = node;
 
         totalOfElements++;
     }
