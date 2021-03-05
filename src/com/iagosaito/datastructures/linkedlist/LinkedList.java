@@ -110,6 +110,17 @@ public class LinkedList {
     }
 
     public boolean exists(Object element) {
+
+        Node node = this.node;
+
+        while (node != null) {
+            if (node.getElement().equals(element)) {
+                return true;
+            }
+
+            node = node.getNext();
+        }
+
         return false;
     }
 

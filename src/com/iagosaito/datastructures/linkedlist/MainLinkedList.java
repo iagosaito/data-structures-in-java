@@ -32,5 +32,9 @@ public class MainLinkedList {
 
         linkedList.add(0, "Francisco");
         System.out.println(linkedList.toString());
+
+        System.out.println(linkedList.exists("Francisco"));
+        System.out.println(linkedList.exists("Ítalo"));
+        System.out.println(linkedList.exists("Ferdinando"));
     }
 }
