@@ -89,6 +89,10 @@ public class LinkedList {
         }
     }
 
+    public void remove(int position) {
+
+    }
+
     public int size() {
         return totalOfElements;
     }
