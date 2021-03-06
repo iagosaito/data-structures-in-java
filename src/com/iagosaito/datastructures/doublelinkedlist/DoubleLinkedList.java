@@ -135,6 +135,15 @@ public class DoubleLinkedList {
     }
 
     public boolean exists(Object element) {
+
+        Node node = this.firstNode;
+        for (int i = 0; i < totalOfElements; i++) {
+            if (node.getElement().equals(element)) {
+                return true;
+            }
+
+            node = node.getNext();
+        }
         return false;
     }
 

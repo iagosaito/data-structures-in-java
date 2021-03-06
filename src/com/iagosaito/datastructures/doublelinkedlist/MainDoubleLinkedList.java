@@ -22,6 +22,9 @@ public class MainDoubleLinkedList {
 
         doubleLinkedList.remove(1);
         System.out.println(doubleLinkedList);
+
+        System.out.println(doubleLinkedList.exists("Antonio"));
+        System.out.println(doubleLinkedList.exists("Filadelfo"));
     }
 
 }
