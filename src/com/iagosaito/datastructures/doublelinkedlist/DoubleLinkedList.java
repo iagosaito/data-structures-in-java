@@ -54,6 +54,13 @@ public class DoubleLinkedList {
 
         node.setNext(newNode);
 
+        if (newNode.getNext() == null) {
+            lastNode = newNode;
+        } else {
+            Node nextNode = newNode.getNext();
+            nextNode.setPrevious(newNode);
+        }
+
         totalOfElements++;
     }
 
@@ -103,6 +110,23 @@ public class DoubleLinkedList {
     }
 
     public void remove(int position) {
+
+        if (!isValidPosition(position)) {
+            throw new IllegalArgumentException("invalid position!!");
+        }
+
+        if (position == 0) {
+            removeAtTheBeginning();
+        } else {
+            Node node = get(position);
+            Node previous = node.getPrevious();
+            Node next = node.getNext();
+
+            previous.setNext(next);
+            next.setPrevious(previous);
+
+            totalOfElements--;
+        }
 
     }
 

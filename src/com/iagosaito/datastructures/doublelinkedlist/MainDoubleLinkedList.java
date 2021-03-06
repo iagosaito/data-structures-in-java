@@ -7,13 +7,20 @@ public class MainDoubleLinkedList {
 
         doubleLinkedList.addAtTheBeginning("Maria");
         System.out.println(doubleLinkedList);
+
         doubleLinkedList.addInTheEnd("João");
         System.out.println(doubleLinkedList);
+
         doubleLinkedList.add(1, "José");
         System.out.println(doubleLinkedList);
+
         doubleLinkedList.removeAtTheBeginning();
         System.out.println(doubleLinkedList);
+
         doubleLinkedList.add(2, "Antonio");
+        System.out.println(doubleLinkedList);
+
+        doubleLinkedList.remove(1);
         System.out.println(doubleLinkedList);
     }
 
