@@ -23,6 +23,18 @@ public class DoubleLinkedList {
 
     public void addInTheEnd(Object element) {
 
+        if (totalOfElements == 0) {
+            addAtTheBeginning(element);
+        } else {
+            Node node = new Node(element);
+            node.setPrevious(lastNode);
+            lastNode.setNext(node);
+
+            lastNode = node;
+
+            totalOfElements++;
+        }
+
     }
 
     public void add(int position, Object element) {
@@ -30,11 +42,32 @@ public class DoubleLinkedList {
     }
 
     public Node get(int position) {
-        return null;
+
+        if (!isValidPosition(position)) {
+            throw new IllegalArgumentException("invalid position!!");
+        }
+
+        Node node;
+        if (position < (totalOfElements >> 1)) {
+            node = firstNode;
+
+            for (int i = 0; i < position; i++) {
+                node = node.getNext();
+            }
+        } else {
+            position = (totalOfElements - 1) - position;
+            node = lastNode;
+
+            for (int i = 0; i < position; i++) {
+                node = node.getPrevious();
+            }
+        }
+
+        return node;
     }
 
     private boolean isValidPosition(int position) {
-        return false;
+        return position >= 0 && position < totalOfElements;
     }
 
     public void removeAtTheBeginning() {

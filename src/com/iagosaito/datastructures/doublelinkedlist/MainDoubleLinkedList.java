@@ -1,17 +1,16 @@
 package com.iagosaito.datastructures.doublelinkedlist;
 
-import java.util.LinkedList;
-
 public class MainDoubleLinkedList {
 
     public static void main(String[] args) {
         final DoubleLinkedList doubleLinkedList = new DoubleLinkedList();
 
-        doubleLinkedList.addAtTheBeginning("Iago Saito");
-        doubleLinkedList.addAtTheBeginning("Felipe Massa");
-        doubleLinkedList.addAtTheBeginning("Carlos Pietro");
-
+        doubleLinkedList.addInTheEnd("Everton Ribeiro");
         System.out.println(doubleLinkedList);
+        doubleLinkedList.addAtTheBeginning("Pelé");
+        System.out.println(doubleLinkedList);
+
+        System.out.println(doubleLinkedList.get(1));
     }
 
 }
