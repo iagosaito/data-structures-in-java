@@ -39,6 +39,22 @@ public class DoubleLinkedList {
 
     public void add(int position, Object element) {
 
+        if (position < 0 || position > totalOfElements) {
+            throw new IllegalArgumentException("invalid position!!");
+        }
+
+        if (position == 0) {
+            addAtTheBeginning(element);
+        }
+
+        Node node = get(position - 1);
+
+        Node newNode = new Node(element, node.getNext());
+        newNode.setPrevious(node);
+
+        node.setNext(newNode);
+
+        totalOfElements++;
     }
 
     public Node get(int position) {

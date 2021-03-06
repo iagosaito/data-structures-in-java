@@ -5,20 +5,15 @@ public class MainDoubleLinkedList {
     public static void main(String[] args) {
         final DoubleLinkedList doubleLinkedList = new DoubleLinkedList();
 
-        doubleLinkedList.addInTheEnd("Everton Ribeiro");
+        doubleLinkedList.addAtTheBeginning("Maria");
         System.out.println(doubleLinkedList);
-        doubleLinkedList.addAtTheBeginning("Pelé");
-        doubleLinkedList.addAtTheBeginning("Jair");
-        doubleLinkedList.addAtTheBeginning("Bonoro");
+        doubleLinkedList.addInTheEnd("João");
         System.out.println(doubleLinkedList);
-
-        doubleLinkedList.removeAtTheBeginning();
+        doubleLinkedList.add(1, "José");
         System.out.println(doubleLinkedList);
         doubleLinkedList.removeAtTheBeginning();
         System.out.println(doubleLinkedList);
-        doubleLinkedList.removeAtTheBeginning();
-        System.out.println(doubleLinkedList);
-        doubleLinkedList.removeAtTheBeginning();
+        doubleLinkedList.add(2, "Antonio");
         System.out.println(doubleLinkedList);
     }
 
