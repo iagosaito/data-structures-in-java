@@ -8,9 +8,18 @@ public class MainDoubleLinkedList {
         doubleLinkedList.addInTheEnd("Everton Ribeiro");
         System.out.println(doubleLinkedList);
         doubleLinkedList.addAtTheBeginning("Pelé");
+        doubleLinkedList.addAtTheBeginning("Jair");
+        doubleLinkedList.addAtTheBeginning("Bonoro");
         System.out.println(doubleLinkedList);
 
-        System.out.println(doubleLinkedList.get(1));
+        doubleLinkedList.removeAtTheBeginning();
+        System.out.println(doubleLinkedList);
+        doubleLinkedList.removeAtTheBeginning();
+        System.out.println(doubleLinkedList);
+        doubleLinkedList.removeAtTheBeginning();
+        System.out.println(doubleLinkedList);
+        doubleLinkedList.removeAtTheBeginning();
+        System.out.println(doubleLinkedList);
     }
 
 }

@@ -72,6 +72,18 @@ public class DoubleLinkedList {
 
     public void removeAtTheBeginning() {
 
+        if (totalOfElements == 1) {
+            firstNode = null;
+            lastNode = null;
+        } else {
+            Node nextNode = firstNode.getNext();
+
+            nextNode.setPrevious(null);
+
+            firstNode = nextNode;
+        }
+
+        totalOfElements--;
     }
 
     public void remove(int position) {
